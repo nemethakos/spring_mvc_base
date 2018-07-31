@@ -15,12 +15,15 @@
 	
 	<context:component-scan base-package="com.pluralsight"/>
 	
-	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+<bean
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
 		<property name="order" value="1" />
 		<property name="contentNegotiationManager">
-			<bean class="org.springframework.web.accept.ContentNegotiationManager">
+			<bean
+				class="org.springframework.web.accept.ContentNegotiationManager">
 				<constructor-arg>
-					<bean class="org.springframework.web.accept.PathExtensionContentNegotiationStrategy">
+					<bean
+						class="org.springframework.web.accept.PathExtensionContentNegotiationStrategy">
 						<constructor-arg>
 							<map>
 								<entry key="json" value="application/json" />
@@ -31,21 +34,23 @@
 				</constructor-arg>
 			</bean>
 		</property>
-		
 		<property name="defaultViews">
 			<list>
-				<bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" />
-				<bean class="org.springframework.web.servlet.view.xml.MarshallingView">
+				<bean
+					class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"></bean>
+				<bean
+					class="org.springframework.web.servlet.view.xml.MarshallingView">
 					<constructor-arg>
-						<bean class="org.springframework.oxm.xstream.XStreamMarshaller">
+						<bean
+							class="org.springframework.oxm.xstream.XStreamMarshaller">
 							<property name="autodetectAnnotations" value="true" />
 						</bean>
 					</constructor-arg>
 				</bean>
 			</list>
+
 		</property>
-	</bean>
-	
+	</bean>	
 	<mvc:interceptors>
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="language"/>
 	</mvc:interceptors>

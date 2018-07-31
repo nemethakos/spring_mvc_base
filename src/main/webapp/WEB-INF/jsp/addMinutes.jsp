@@ -1,7 +1,9 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>    
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>    
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
 
@@ -94,7 +96,7 @@
       </a>
       <br/>
       <br/>
-      <form:form commandName="exercise">
+      	<form:form modelAttribute="exercise">
       	<form:errors path="*" cssClass="errorblock" element="div" />
       	<div class="control-group">
           <label for="textinput1">

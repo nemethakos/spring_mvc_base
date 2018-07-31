@@ -68,7 +68,10 @@
         </p>
       </div>
       
-      <form:form commandName="goal">
+     <!--In the course 'commandName="goal"' is used 
+		(instead of modelAttribute="goal"), but this 
+		does not seem to work with Spring Web 5.0.7 -->
+	<form:form modelAttribute="goal">
 		<form:errors path="*" cssClass="errorblock" element="div" />
 			<label for="textinput1">
 	          Enter Minutes:
